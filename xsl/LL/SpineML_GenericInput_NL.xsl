@@ -176,7 +176,7 @@
 										<xsl:value-of select="number(.//SMLNL:FixedValue/@value) div $expt_root//@dt"/>
 									</xsl:if>
 								</xsl:if>
-								<xsl:if test="not(count(.//SMLNL:FixedValue)=1) or number(.//SMLNL:FixedValue/@value)=0">1</xsl:if>
+								<xsl:if test="not(count(.//SMLNL:FixedValue)=1) or number(.//SMLNL:FixedValue/@value)=0">0</xsl:if>
 							</Lag>
 
 						</Link>
@@ -220,7 +220,7 @@
 									</xsl:if>
 
 								</xsl:if>
-								<xsl:if test="not(count(.//SMLNL:FixedValue)=1) or number(.//SMLNL:FixedValue/@value)=0">1</xsl:if>
+								<xsl:if test="not(count(.//SMLNL:FixedValue)=1) or number(.//SMLNL:FixedValue/@value)=0">0</xsl:if>
 							</Lag>
 						</Link>
 					</xsl:if>
@@ -375,13 +375,13 @@
 										<xsl:value-of select="number(.//SMLNL:FixedValue/@value) div $expt_root//@dt"/>
 									</xsl:if>
 								</xsl:if>
-								<xsl:if test="not(count(.//SMLNL:FixedValue)=1) or number(.//SMLNL:FixedValue/@value)=0">1</xsl:if>
+								<xsl:if test="not(count(.//SMLNL:FixedValue)=1) or number(.//SMLNL:FixedValue/@value)=0">0</xsl:if>
 							</Lag>
 						</Link>
 						<Link>
 							<Src><xsl:value-of select="concat('remap',generate-id(.))"/><xsl:text disable-output-escaping="no">&gt;</xsl:text>out</Src>
 							<Dst><xsl:value-of select="translate(../@name,' -', '_H')"/><xsl:if test="count(document(../@url)//SMLCL:AnalogReducePort[@name=$dstPortRef])=1 or count(document(../@url)//SMLCL:EventReceivePort[@name=$dstPortRef])=1"><xsl:text disable-output-escaping="no">&lt;</xsl:text></xsl:if><xsl:text disable-output-escaping="no">&lt;</xsl:text><xsl:value-of select="@dst_port"/></Dst>
-							<Lag>1</Lag>
+							<Lag>0</Lag>
 						</Link>
 					</xsl:if>
 
